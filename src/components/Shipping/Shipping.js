@@ -28,7 +28,7 @@ const Shipping = () => {
 
     const handleCreateUser = event => {
         event.preventDefault();
-        const shipping = { name, emai, address, phone };
+        const shipping = { name, email, address, phoneNumber };
         console.log(shipping);
     }
 
@@ -50,7 +50,7 @@ const Shipping = () => {
                         <input onBlur={handleAddressBlur} type="text" name="address" id="" required />
                     </div>
                     <div className="input-group">
-                        <label htmlFor="text">Confirm Password</label>
+                        <label htmlFor="text">Your Phone Number</label>
                         <input onBlur={handlePhoneNumberBlur} type="text" name="phone" id="" required />
                     </div>
                     <p style={{ color: 'red' }}>{error}</p>
