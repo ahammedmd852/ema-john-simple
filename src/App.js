@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
+import Error from './components/Error/Error';
 import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
@@ -20,6 +21,7 @@ function App() {
         <Route path='/about' element={<About />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
+        <Route path='*' element={<Error />}></Route>
       </Routes>
     </div>
   );
