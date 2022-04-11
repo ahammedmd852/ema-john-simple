@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Shipping = () => {
+    const [user] = useAuthState(auth);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
@@ -25,6 +28,8 @@ const Shipping = () => {
 
     const handleCreateUser = event => {
         event.preventDefault();
+        const shipping = { name, emai, address, phone };
+        console.log(shipping);
     }
 
     return (
@@ -38,7 +43,7 @@ const Shipping = () => {
                     </div>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required />
+                        <input value={user?.email} readOnly type="email" name="email" id="" required />
                     </div>
                     <div className="input-group">
                         <label htmlFor="text">Address</label>
